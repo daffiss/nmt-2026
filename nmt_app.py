@@ -22,33 +22,20 @@ st.set_page_config(
 # ============================================================
 
 SUBJECT_PALETTE = [
-    "#2563EB",
-    "#7C3AED",
-    "#059669",
-    "#DB2777",
-    "#0891B2",
-    "#EA580C",
-    "#4F46E5",
-    "#65A30D",
-    "#9333EA",
-    "#0F766E",
-    "#DC2626",
-    "#475569"
+    "#0F766E", "#457B9D", "#E76F51", "#E9C46A",
+    "#6D597A", "#84A98C", "#C97C5D", "#2A9D8F",
+    "#7A8C99", "#9A6A7B", "#6B705C", "#526777"
 ]
 
-MAIN_BLUE = "#2563EB"
-DARK_NAVY = "#172033"
-VIOLET = "#7C3AED"
-MINT = "#059669"
-PINK = "#DB2777"
+MAIN_RED = "#0F766E"
+DARK_BURGUNDY = "#1F2937"
+RED = "#E76F51"
+ROSE = "#2A9D8F"
+WINE = "#457B9D"
 
 HEATMAP_SCALE = [
-    [0, "#F1F5F9"],
-    [0.2, "#DBEAFE"],
-    [0.4, "#BFDBFE"],
-    [0.6, "#818CF8"],
-    [0.8, "#6366F1"],
-    [1, "#312E81"]
+    [0, "#F1F5F4"], [0.2, "#CDE7E2"], [0.4, "#8BCBC1"],
+    [0.6, "#4FA79C"], [0.8, "#247F78"], [1, "#174C4A"]
 ]
 
 dashboard_template = go.layout.Template(
@@ -56,24 +43,24 @@ dashboard_template = go.layout.Template(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="#FFFFFF",
         font=dict(
-            color="#334155",
+            color="#3F2930",
             family="Arial"
         ),
         colorway=SUBJECT_PALETTE,
         xaxis=dict(
-            gridcolor="#E8EDF5",
-            zerolinecolor="#CBD5E1",
-            linecolor="#CBD5E1"
+            gridcolor="#E8ECE9",
+            zerolinecolor="#CDD8D5",
+            linecolor="#B8C9C5"
         ),
         yaxis=dict(
-            gridcolor="#E8EDF5",
-            zerolinecolor="#CBD5E1",
-            linecolor="#CBD5E1"
+            gridcolor="#E8ECE9",
+            zerolinecolor="#CDD8D5",
+            linecolor="#B8C9C5"
         ),
         hoverlabel=dict(
             bgcolor="#FFFFFF",
-            bordercolor="#CBD5E1",
-            font_color="#172033"
+            bordercolor="#B8C9C5",
+            font_color="#1F2937"
         )
     )
 )
@@ -94,15 +81,15 @@ st.markdown(
         background:
             radial-gradient(
                 circle at 90% 0%,
-                rgba(37, 99, 235, 0.07),
+                rgba(166, 27, 50, 0.09),
                 transparent 28%
             ),
             radial-gradient(
                 circle at 0% 25%,
-                rgba(124, 58, 237, 0.05),
+                rgba(194, 65, 79, 0.06),
                 transparent 25%
             ),
-            #F8FAFC;
+            #F6F5F2;
     }
 
     .block-container {
@@ -112,7 +99,7 @@ st.markdown(
     }
 
     h1 {
-        color: #172033 !important;
+        color: #1F2937 !important;
         font-weight: 850 !important;
         letter-spacing: -1.5px;
         font-size: 2.7rem !important;
@@ -120,13 +107,13 @@ st.markdown(
     }
 
     h2, h3 {
-        color: #172033 !important;
+        color: #1F2937 !important;
         font-weight: 750 !important;
         letter-spacing: -0.5px;
     }
 
     .hero-subtitle {
-        color: #64748B;
+        color: #667085;
         font-size: 1.02rem;
         margin-top: 0.2rem;
         margin-bottom: 1.8rem;
@@ -140,17 +127,17 @@ st.markdown(
         border-radius: 14px;
         background: linear-gradient(
             90deg,
-            #EFF6FF,
-            #F5F3FF
+            #EEF7F5,
+            #FAFBFA
         );
-        border-left: 4px solid #2563EB;
-        color: #172033;
+        border-left: 4px solid #0F766E;
+        color: #1F2937;
         font-size: 1.18rem;
         font-weight: 800;
     }
 
     .section-description {
-        color: #64748B;
+        color: #667085;
         margin-top: 0.3rem;
         margin-bottom: 1rem;
         font-size: 0.91rem;
@@ -158,7 +145,7 @@ st.markdown(
 
     div[data-testid="stMetric"] {
         background: rgba(255, 255, 255, 0.92);
-        border: 1px solid #E2E8F0;
+        border: 1px solid #E4E7E2;
         border-radius: 18px;
         padding: 1.1rem 1.2rem;
         box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05);
@@ -166,49 +153,108 @@ st.markdown(
     }
 
     div[data-testid="stMetricLabel"] {
-        color: #64748B !important;
+        color: #667085 !important;
         font-size: 0.84rem !important;
         font-weight: 600 !important;
     }
 
     div[data-testid="stMetricValue"] {
-        color: #172033 !important;
+        color: #1F2937 !important;
         font-weight: 850 !important;
         font-size: 1.8rem !important;
     }
 
     div[data-baseweb="select"] > div {
-        border: 1px solid #CBD5E1 !important;
+        border: 1px solid #B8C9C5 !important;
         border-radius: 11px !important;
         background-color: #FFFFFF !important;
     }
 
     div[data-baseweb="select"] > div:hover {
-        border-color: #2563EB !important;
+        border-color: #0F766E !important;
     }
 
     div[data-testid="stExpander"] {
-        border: 1px solid #E2E8F0;
+        border: 1px solid #E4E7E2;
         border-radius: 14px;
         background: #FFFFFF;
     }
 
     div[data-testid="stExpander"] summary {
-        color: #172033;
+        color: #1F2937;
         font-weight: 650;
     }
 
     hr {
-        border-color: #E2E8F0 !important;
+        border-color: #E4E7E2 !important;
         margin-top: 2rem !important;
         margin-bottom: 2rem !important;
     }
 
     .filter-label {
-        color: #475569;
+        color: #475467;
         font-size: 0.85rem;
         font-weight: 650;
         margin-bottom: 0.4rem;
+    }
+
+
+    .active-filter-note { color:#667085; font-size:0.78rem; margin:0.25rem 0 1.35rem 0.15rem; }
+    div[data-testid="stExpander"] { border:1px solid #D7E2DF; border-radius:16px; background:rgba(255,255,255,0.94); box-shadow:0 8px 26px rgba(31,41,55,0.06); }
+    div[data-testid="stExpander"] summary { padding:0.9rem 1rem; font-size:0.95rem; }
+    .chart-note { color:#667085; font-size:0.82rem; line-height:1.45; margin:-0.25rem 0 0.65rem 0; }
+    div[data-testid="stPlotlyChart"] { background:#FFFFFF; border:1px solid #E4E7E2; border-radius:16px; padding:0.15rem; box-shadow:0 7px 22px rgba(31,41,55,0.045); }
+
+    /* Premium dashboard accents */
+    h1 {
+        position: relative;
+        padding-bottom: 0.7rem;
+    }
+
+    h1::after {
+        content: "";
+        display: block;
+        width: 64px;
+        height: 4px;
+        margin-top: 0.55rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #0F766E, #457B9D, #E9C46A);
+    }
+
+    div[data-testid="stMetric"] {
+        position: relative;
+        overflow: hidden;
+    }
+
+    div[data-testid="stMetric"]::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #1F2937, #E76F51);
+    }
+
+    div[data-testid="stMetricValue"] {
+        letter-spacing: -0.7px;
+    }
+
+    div[data-testid="stPlotlyChart"] {
+        background: #FFFFFF;
+        border: 1px solid #E4E7E2;
+        border-radius: 18px;
+        padding: 0.25rem;
+        box-shadow: 0 8px 28px rgba(74, 17, 27, 0.06);
+    }
+
+    div[data-baseweb="select"] > div:focus-within {
+        border-color: #0F766E !important;
+        box-shadow: 0 0 0 2px rgba(166, 27, 50, 0.10) !important;
+    }
+
+    div[data-testid="stExpander"] {
+        box-shadow: 0 6px 20px rgba(74, 17, 27, 0.04);
     }
 
     </style>
@@ -360,8 +406,7 @@ st.title("NMT 2026 Explorer")
 st.markdown(
     """
     <div class="hero-subtitle">
-        Explore NMT 2026 results across subjects, regions and participant groups.
-        Use the filters below to investigate patterns in the data.
+        A clean, interactive view of NMT 2026 results — explore patterns by subject, region and participant group.
     </div>
     """,
     unsafe_allow_html=True
@@ -404,52 +449,24 @@ reg_type_options = ["All"] + [
 
 
 # ============================================================
-# FILTERS
+# FILTER DRAWER
 # ============================================================
 
-st.markdown(
-    """
-    <div class="section-header">
-        Explore results
-    </div>
+with st.expander("Filters  ·  refine the view", expanded=False):
+    st.markdown("Choose a subset of participants and the visualizations below will update automatically.")
+    f1, f2, f3, f4 = st.columns([1.35, 1, 1, 1.2])
+    with f1:
+        selected_region = st.selectbox("Region", region_options)
+    with f2:
+        selected_gender = st.selectbox("Gender", gender_options)
+    with f3:
+        selected_reg_type = st.selectbox("Participant type", reg_type_options)
+    with f4:
+        subject_options = ["All"] + list(subjects.keys())
+        selected_subject = st.selectbox("Subject", subject_options)
 
-    <div class="section-description">
-        Select a region, participant group, gender or subject to update the analysis.
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("<div class=\"active-filter-note\">Filters are optional — the default view shows the full dataset.</div>", unsafe_allow_html=True)
 
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
-    selected_region = st.selectbox(
-        "Region",
-        region_options
-    )
-
-with col2:
-    selected_gender = st.selectbox(
-        "Gender",
-        gender_options
-    )
-
-with col3:
-    selected_reg_type = st.selectbox(
-        "Participant type",
-        reg_type_options
-    )
-
-with col4:
-    subject_options = ["All"] + list(subjects.keys())
-
-    selected_subject = st.selectbox(
-        "Subject",
-        subject_options
-    )
-
-
-# ============================================================
 # SQL FILTER
 # ============================================================
 
@@ -620,9 +637,9 @@ with k4:
 # SCORE DISTRIBUTION
 # ============================================================
 
-st.divider()
-
 st.subheader("Score distribution")
+
+st.markdown("<div class=\"chart-note\">How results are distributed across the 100–200 scale.</div>", unsafe_allow_html=True)
 
 
 if selected_subject == "All":
@@ -740,7 +757,7 @@ else:
             distribution_df,
             x="Score",
             y="Count",
-            color_discrete_sequence=[MAIN_BLUE]
+            color_discrete_sequence=[MAIN_RED]
         )
 
         fig.update_traces(
@@ -778,9 +795,9 @@ else:
 # SCORE RANGES
 # ============================================================
 
-st.divider()
-
 st.subheader("Score ranges overview")
+
+st.markdown("<div class=\"chart-note\">A compact view of how results are concentrated across broad score bands.</div>", unsafe_allow_html=True)
 
 if not distribution_df.empty:
 
@@ -826,13 +843,13 @@ if not distribution_df.empty:
         values="Count",
         hole=0.58,
         color_discrete_sequence=[
-            "#CBD5E1",
-            "#93C5FD",
-            "#60A5FA",
-            "#818CF8",
-            "#7C3AED",
-            "#C026D3",
-            "#059669"
+            "#E8D7DA",
+            "#F6BFC6",
+            "#E98E98",
+            "#2A9D8F",
+            "#247F78",
+            "#0F766E",
+            "#174C4A"
         ]
     )
 
@@ -865,42 +882,25 @@ if not distribution_df.empty:
     )
 
 
+
 # ============================================================
-# AGE ANALYSIS
-# ============================================================
 
-st.divider()
+left_col, right_col = st.columns(2)
 
-st.subheader("Age and performance")
+with left_col:
+    # ============================================================
+    # AGE ANALYSIS
+    # ============================================================
 
-if selected_subject != "All":
+    st.subheader("Age and performance")
 
-    score_col = score_columns[selected_subject]
+    st.markdown("<div class=\"chart-note\">Participant age groups shown as a population profile.</div>", unsafe_allow_html=True)
 
-    age_performance = con.execute(f"""
-        SELECT
-            Age,
-            COUNT("{score_col}") AS Participants
+    if selected_subject != "All":
 
-        FROM nmt_clean
+        score_col = score_columns[selected_subject]
 
-        {where_clause}
-
-        GROUP BY Age
-
-        HAVING Age IS NOT NULL
-
-        ORDER BY Age
-    """).df()
-
-else:
-
-    age_union = []
-
-    for score_col in score_columns.values():
-
-        age_union.append(
-            f"""
+        age_performance = con.execute(f"""
             SELECT
                 Age,
                 COUNT("{score_col}") AS Participants
@@ -912,138 +912,128 @@ else:
             GROUP BY Age
 
             HAVING Age IS NOT NULL
-            """
-        )
 
-    age_performance = con.execute(
-        f"""
-        SELECT
-            Age,
-            SUM(Participants) AS Participants
+            ORDER BY Age
+        """).df()
 
-        FROM (
-            {" UNION ALL ".join(age_union)}
-        )
+    else:
 
-        GROUP BY Age
-        ORDER BY Age
-        """
-    ).df()
+        age_union = []
 
+        for score_col in score_columns.values():
 
-if not age_performance.empty:
+            age_union.append(
+                f"""
+                SELECT
+                    Age,
+                    COUNT("{score_col}") AS Participants
 
-    age_performance["Age group"] = pd.cut(
-        age_performance["Age"],
-        bins=[0, 16, 18, 20, 25, 100],
-        labels=["≤16", "17–18", "19–20", "21–25", "26+"]
-    )
+                FROM nmt_clean
 
-    age_grouped = (
-        age_performance
-        .groupby(
-            "Age group",
-            observed=False
-        )["Participants"]
-        .sum()
-        .reset_index()
-    )
+                {where_clause}
 
-    fig = px.bar(
-        age_grouped,
-        x="Age group",
-        y="Participants",
-        color="Age group",
-        color_discrete_sequence=[
-            "#2563EB",
-            "#4F46E5",
-            "#7C3AED",
-            "#9333EA",
-            "#C026D3"
-        ],
-        labels={
-            "Age group": "Age group",
-            "Participants": "Number of participants"
-        }
-    )
+                GROUP BY Age
 
-    fig.update_traces(
-        hovertemplate=(
-            "<b>Age group: %{x}</b>"
-            "<br>Participants: %{y:,}"
-            "<extra></extra>"
-        ),
-        marker_line_width=0
-    )
+                HAVING Age IS NOT NULL
+                """
+            )
 
-    fig.update_layout(
-        showlegend=False,
-        xaxis=dict(type="category"),
-        yaxis=dict(
-            title="Number of participants",
-            tickformat=","
-        ),
-        height=500,
-        margin=dict(l=20, r=20, t=30, b=30)
-    )
-
-    st.plotly_chart(
-        fig,
-        width="stretch"
-    )
-
-
-# ============================================================
-# GENDER COMPARISON
-# ============================================================
-
-st.divider()
-
-st.subheader("NMT results by gender")
-
-
-if selected_subject != "All":
-
-    score_col = score_columns[selected_subject]
-
-    gender_data = con.execute(f"""
-        SELECT
-            TRIM(CAST("SexTypeName" AS VARCHAR)) AS SexTypeName,
-
-            CAST(
-                FLOOR("{score_col}" / 10) * 10
-                AS INTEGER
-            ) AS Score,
-
-            COUNT(*) AS Participants
-
-        FROM nmt_clean
-
-        {where_clause}
-
-        {"AND" if where_clause else "WHERE"}
-        "SexTypeName" IS NOT NULL
-
-        AND "{score_col}" IS NOT NULL
-
-        GROUP BY
-            SexTypeName,
-            Score
-
-        ORDER BY Score
-    """).df()
-
-else:
-
-    gender_union = []
-
-    for score_col in score_columns.values():
-
-        gender_union.append(
+        age_performance = con.execute(
             f"""
             SELECT
-                TRIM(CAST("SexTypeName" AS VARCHAR))
-                    AS SexTypeName,
+                Age,
+                SUM(Participants) AS Participants
+
+            FROM (
+                {" UNION ALL ".join(age_union)}
+            )
+
+            GROUP BY Age
+            ORDER BY Age
+            """
+        ).df()
+
+
+    if not age_performance.empty:
+
+        age_performance["Age group"] = pd.cut(
+            age_performance["Age"],
+            bins=[0, 16, 18, 20, 25, 100],
+            labels=["≤16", "17–18", "19–20", "21–25", "26+"]
+        )
+
+        age_grouped = (
+            age_performance
+            .groupby(
+                "Age group",
+                observed=False
+            )["Participants"]
+            .sum()
+            .reset_index()
+        )
+
+        fig = px.bar(
+            age_grouped,
+            x="Age group",
+            y="Participants",
+            color="Age group",
+            color_discrete_sequence=[
+                "#0F766E",
+                "#0F766E",
+                "#247F78",
+                "#E76F51",
+                "#2A9D8F"
+            ],
+            labels={
+                "Age group": "Age group",
+                "Participants": "Number of participants"
+            }
+        )
+
+        fig.update_traces(
+            hovertemplate=(
+                "<b>Age group: %{x}</b>"
+                "<br>Participants: %{y:,}"
+                "<extra></extra>"
+            ),
+            marker_line_width=0
+        )
+
+        fig.update_layout(
+            showlegend=False,
+            xaxis=dict(type="category"),
+            yaxis=dict(
+                title="Number of participants",
+                tickformat=","
+            ),
+            height=500,
+            margin=dict(l=20, r=20, t=30, b=30)
+        )
+
+        st.plotly_chart(
+            fig,
+            width="stretch"
+        )
+
+
+
+with right_col:
+    # ============================================================
+    # GENDER COMPARISON
+    # ============================================================
+
+    st.subheader("NMT results by gender")
+
+    st.markdown("<div class=\"chart-note\">Compare score distributions across the available gender groups.</div>", unsafe_allow_html=True)
+
+
+    if selected_subject != "All":
+
+        score_col = score_columns[selected_subject]
+
+        gender_data = con.execute(f"""
+            SELECT
+                TRIM(CAST("SexTypeName" AS VARCHAR)) AS SexTypeName,
 
                 CAST(
                     FLOOR("{score_col}" / 10) * 10
@@ -1064,74 +1054,104 @@ else:
             GROUP BY
                 SexTypeName,
                 Score
+
+            ORDER BY Score
+        """).df()
+
+    else:
+
+        gender_union = []
+
+        for score_col in score_columns.values():
+
+            gender_union.append(
+                f"""
+                SELECT
+                    TRIM(CAST("SexTypeName" AS VARCHAR))
+                        AS SexTypeName,
+
+                    CAST(
+                        FLOOR("{score_col}" / 10) * 10
+                        AS INTEGER
+                    ) AS Score,
+
+                    COUNT(*) AS Participants
+
+                FROM nmt_clean
+
+                {where_clause}
+
+                {"AND" if where_clause else "WHERE"}
+                "SexTypeName" IS NOT NULL
+
+                AND "{score_col}" IS NOT NULL
+
+                GROUP BY
+                    SexTypeName,
+                    Score
+                """
+            )
+
+        gender_data = con.execute(
+            f"""
+            SELECT
+                SexTypeName,
+                Score,
+                SUM(Participants) AS Participants
+
+            FROM (
+                {" UNION ALL ".join(gender_union)}
+            )
+
+            GROUP BY
+                SexTypeName,
+                Score
+
+            ORDER BY Score
             """
+        ).df()
+
+
+    if not gender_data.empty:
+
+        gender_colors = ["#0F766E", "#E76F51", "#E9C46A", "#6D597A"]
+
+        fig = px.bar(
+            gender_data,
+            x="Score",
+            y="Participants",
+            color="SexTypeName",
+            barmode="group",
+            color_discrete_sequence=gender_colors
         )
 
-    gender_data = con.execute(
-        f"""
-        SELECT
-            SexTypeName,
-            Score,
-            SUM(Participants) AS Participants
-
-        FROM (
-            {" UNION ALL ".join(gender_union)}
+        fig.update_traces(
+            hovertemplate=(
+                "<b>%{fullData.name}</b>"
+                "<br>Participants: %{y:,}"
+                "<extra></extra>"
+            ),
+            marker_line_width=0
         )
 
-        GROUP BY
-            SexTypeName,
-            Score
+        fig.update_layout(
+            xaxis=dict(
+                type="category",
+                title="Score range"
+            ),
+            yaxis=dict(
+                title="Number of participants",
+                tickformat=","
+            ),
+            legend_title="Gender",
+            height=500,
+            margin=dict(l=20, r=20, t=30, b=30)
+        )
 
-        ORDER BY Score
-        """
-    ).df()
-
-
-if not gender_data.empty:
-
-    gender_colors = [
-        MAIN_BLUE,
-        PINK,
-        VIOLET,
-        MINT
-    ]
-
-    fig = px.bar(
-        gender_data,
-        x="Score",
-        y="Participants",
-        color="SexTypeName",
-        barmode="group",
-        color_discrete_sequence=gender_colors
-    )
-
-    fig.update_traces(
-        hovertemplate=(
-            "<b>%{fullData.name}</b>"
-            "<br>Participants: %{y:,}"
-            "<extra></extra>"
-        ),
-        marker_line_width=0
-    )
-
-    fig.update_layout(
-        xaxis=dict(
-            type="category",
-            title="Score range"
-        ),
-        yaxis=dict(
-            title="Number of participants",
-            tickformat=","
-        ),
-        legend_title="Gender",
-        height=500,
-        margin=dict(l=20, r=20, t=30, b=30)
-    )
-
-    st.plotly_chart(
-        fig,
-        width="stretch"
-    )
+        st.plotly_chart(
+            fig,
+            width="stretch"
+        )
 
 
 # ============================================================
@@ -1152,414 +1172,222 @@ st.markdown(
 )
 
 
+
 # ============================================================
-# SUBJECT PERFORMANCE
-# ============================================================
 
-st.divider()
+left_col, right_col = st.columns(2)
 
-st.subheader("Subject performance")
+with left_col:
+    # ============================================================
+    # SUBJECT PERFORMANCE
+    # ============================================================
 
-subject_union = []
+    st.subheader("Subject performance")
 
-for subject_name, score_col in score_columns.items():
+    st.markdown("<div class=\"chart-note\">Average score and participant volume across all NMT subjects.</div>", unsafe_allow_html=True)
 
-    subject_union.append(
-        f"""
-        SELECT
-            '{subject_name}' AS Subject,
-            "{score_col}" AS Score
+    subject_union = []
 
-        FROM nmt_clean
+    for subject_name, score_col in score_columns.items():
 
-        {where_clause}
+        subject_union.append(
+            f"""
+            SELECT
+                '{subject_name}' AS Subject,
+                "{score_col}" AS Score
 
-        {"AND" if where_clause else "WHERE"}
-        "{score_col}" IS NOT NULL
-        """
-    )
+            FROM nmt_clean
 
-subject_stats_df = con.execute(
-    f"""
-    WITH scores AS (
-        {" UNION ALL ".join(subject_union)}
-    )
+            {where_clause}
 
-    SELECT
-        Subject,
-        AVG(Score) AS Average,
-        MEDIAN(Score) AS Median,
-
-        SUM(
-            CASE
-                WHEN Score >= 180
-                THEN 1 ELSE 0
-            END
-        ) AS "180+",
-
-        SUM(
-            CASE
-                WHEN Score >= 200
-                THEN 1 ELSE 0
-            END
-        ) AS "200",
-
-        COUNT(*) AS Participants
-
-    FROM scores
-
-    GROUP BY Subject
-    ORDER BY Average
-    """
-).df()
-
-
-if not subject_stats_df.empty:
-
-    fig = px.scatter(
-        subject_stats_df,
-        x="Average",
-        y="Subject",
-        size="Participants",
-        text="Average",
-        color="Subject",
-        color_discrete_sequence=SUBJECT_PALETTE,
-        hover_data={
-            "Average": ":.1f",
-            "Median": ":.1f",
-            "180+": True,
-            "200": True,
-            "Participants": ":,"
-        }
-    )
-
-    fig.update_traces(
-        texttemplate="%{text:.1f}",
-        textposition="middle right",
-        marker=dict(
-            line=dict(
-                color="#FFFFFF",
-                width=1.5
-            ),
-            opacity=0.88
-        ),
-        hovertemplate=(
-            "<b>%{y}</b>"
-            "<br>Average score: %{x:.1f}"
-            "<br>Median score: %{customdata[0]:.1f}"
-            "<br>180+ results: %{customdata[1]:,}"
-            "<br>200-point results: %{customdata[2]:,}"
-            "<br>Participants: %{customdata[3]:,}"
-            "<extra></extra>"
+            {"AND" if where_clause else "WHERE"}
+            "{score_col}" IS NOT NULL
+            """
         )
-    )
 
-    fig.update_layout(
-        showlegend=False,
-        xaxis_title="Average score",
-        yaxis_title="",
-        height=550,
-        margin=dict(l=20, r=50, t=30, b=30)
-    )
-
-    st.plotly_chart(
-        fig,
-        width="stretch"
-    )
-
-
-# ============================================================
-# SCORE × SUBJECT HEATMAP
-# ============================================================
-
-st.divider()
-
-st.subheader("Score distribution by subject")
-
-heatmap_union = []
-
-for subject_name, score_col in score_columns.items():
-
-    heatmap_union.append(
+    subject_stats_df = con.execute(
         f"""
+        WITH scores AS (
+            {" UNION ALL ".join(subject_union)}
+        )
+
         SELECT
-            '{subject_name}' AS Subject,
-
-            CASE
-                WHEN "{score_col}" BETWEEN 100 AND 119
-                    THEN '100–119'
-
-                WHEN "{score_col}" BETWEEN 120 AND 139
-                    THEN '120–139'
-
-                WHEN "{score_col}" BETWEEN 140 AND 159
-                    THEN '140–159'
-
-                WHEN "{score_col}" BETWEEN 160 AND 179
-                    THEN '160–179'
-
-                WHEN "{score_col}" BETWEEN 180 AND 199
-                    THEN '180–199'
-
-                WHEN "{score_col}" = 200
-                    THEN '200'
-
-                ELSE NULL
-            END AS "Score range",
-
-            COUNT(*) AS Count
-
-        FROM nmt_clean
-
-        {where_clause}
-
-        {"AND" if where_clause else "WHERE"}
-        "{score_col}" IS NOT NULL
-
-        GROUP BY
             Subject,
-            "Score range"
+            AVG(Score) AS Average,
+            MEDIAN(Score) AS Median,
 
-        HAVING "Score range" IS NOT NULL
+            SUM(
+                CASE
+                    WHEN Score >= 180
+                    THEN 1 ELSE 0
+                END
+            ) AS "180+",
+
+            SUM(
+                CASE
+                    WHEN Score >= 200
+                    THEN 1 ELSE 0
+                END
+            ) AS "200",
+
+            COUNT(*) AS Participants
+
+        FROM scores
+
+        GROUP BY Subject
+        ORDER BY Average
         """
-    )
-
-heatmap_df = con.execute(
-    " UNION ALL ".join(heatmap_union)
-).df()
-
-heatmap_pivot = heatmap_df.pivot(
-    index="Subject",
-    columns="Score range",
-    values="Count"
-).fillna(0)
-
-heatmap_pivot = heatmap_pivot.reindex(
-    columns=[
-        "100–119",
-        "120–139",
-        "140–159",
-        "160–179",
-        "180–199",
-        "200"
-    ],
-    fill_value=0
-)
-
-fig = px.imshow(
-    heatmap_pivot,
-    text_auto=".0f",
-    aspect="auto",
-    color_continuous_scale=HEATMAP_SCALE
-)
-
-fig.update_layout(
-    xaxis_title="Score range",
-    yaxis_title="",
-    coloraxis_colorbar=dict(
-        tickformat=","
-    ),
-    height=600,
-    margin=dict(l=20, r=20, t=30, b=30)
-)
-
-st.plotly_chart(
-    fig,
-    width="stretch"
-)
+    ).df()
 
 
-# ============================================================
-# REGIONAL PERFORMANCE
-# ============================================================
+    if not subject_stats_df.empty:
 
-st.divider()
-
-st.subheader("Regional performance")
-
-regional_union = []
-
-for subject_name, score_col in score_columns.items():
-
-    regional_union.append(
-        f"""
-        SELECT
-            "RegName" AS Region,
-            "{score_col}" AS Score
-
-        FROM nmt_clean
-
-        {where_clause}
-
-        {"AND" if where_clause else "WHERE"}
-        "RegName" IS NOT NULL
-        AND "{score_col}" IS NOT NULL
-        """
-    )
-
-regional_df = con.execute(
-    f"""
-    WITH regional_scores AS (
-        {" UNION ALL ".join(regional_union)}
-    )
-
-    SELECT
-        Region,
-        AVG(Score) AS Average,
-        COUNT(*) AS Participants
-
-    FROM regional_scores
-
-    GROUP BY Region
-
-    ORDER BY Average DESC
-    """
-).df()
-
-
-if not regional_df.empty:
-
-    regional_df = regional_df.sort_values(
-        "Average",
-        ascending=False
-    )
-
-    fig = px.bar(
-        regional_df.head(10),
-        x="Average",
-        y="Region",
-        orientation="h",
-        text="Average",
-        color="Average",
-        color_continuous_scale=[
-            "#DBEAFE",
-            "#60A5FA",
-            "#2563EB",
-            "#312E81"
-        ],
-        hover_data=["Participants"]
-    )
-
-    fig.update_traces(
-        texttemplate="%{text:.1f}",
-        marker_line_width=0,
-        hovertemplate=(
-            "<b>%{y}</b>"
-            "<br>Average score: %{x:.1f}"
-            "<br>Participants: %{customdata[0]:,}"
-            "<extra></extra>"
+        fig = px.scatter(
+            subject_stats_df,
+            x="Average",
+            y="Subject",
+            size="Participants",
+            text="Average",
+            color="Subject",
+            color_discrete_sequence=SUBJECT_PALETTE,
+            hover_data={
+                "Average": ":.1f",
+                "Median": ":.1f",
+                "180+": True,
+                "200": True,
+                "Participants": ":,"
+            }
         )
+
+        fig.update_traces(
+            texttemplate="%{text:.1f}",
+            textposition="middle right",
+            marker=dict(
+                line=dict(
+                    color="#FFFFFF",
+                    width=1.5
+                ),
+                opacity=0.88
+            ),
+            hovertemplate=(
+                "<b>%{y}</b>"
+                "<br>Average score: %{x:.1f}"
+                "<br>Median score: %{customdata[0]:.1f}"
+                "<br>180+ results: %{customdata[1]:,}"
+                "<br>200-point results: %{customdata[2]:,}"
+                "<br>Participants: %{customdata[3]:,}"
+                "<extra></extra>"
+            )
+        )
+
+        fig.update_layout(
+            showlegend=False,
+            xaxis_title="Average score",
+            yaxis_title="",
+            height=550,
+            margin=dict(l=20, r=50, t=30, b=30)
+        )
+
+        st.plotly_chart(
+            fig,
+            width="stretch"
+        )
+
+
+
+with right_col:
+    # ============================================================
+    # SCORE × SUBJECT HEATMAP
+    # ============================================================
+
+    st.subheader("Score distribution by subject")
+
+    st.markdown("<div class=\"chart-note\">A matrix view for scanning score ranges across subjects.</div>", unsafe_allow_html=True)
+
+    heatmap_union = []
+
+    for subject_name, score_col in score_columns.items():
+
+        heatmap_union.append(
+            f"""
+            SELECT
+                '{subject_name}' AS Subject,
+
+                CASE
+                    WHEN "{score_col}" BETWEEN 100 AND 119
+                        THEN '100–119'
+
+                    WHEN "{score_col}" BETWEEN 120 AND 139
+                        THEN '120–139'
+
+                    WHEN "{score_col}" BETWEEN 140 AND 159
+                        THEN '140–159'
+
+                    WHEN "{score_col}" BETWEEN 160 AND 179
+                        THEN '160–179'
+
+                    WHEN "{score_col}" BETWEEN 180 AND 199
+                        THEN '180–199'
+
+                    WHEN "{score_col}" = 200
+                        THEN '200'
+
+                    ELSE NULL
+                END AS "Score range",
+
+                COUNT(*) AS Count
+
+            FROM nmt_clean
+
+            {where_clause}
+
+            {"AND" if where_clause else "WHERE"}
+            "{score_col}" IS NOT NULL
+
+            GROUP BY
+                Subject,
+                "Score range"
+
+            HAVING "Score range" IS NOT NULL
+            """
+        )
+
+    heatmap_df = con.execute(
+        " UNION ALL ".join(heatmap_union)
+    ).df()
+
+    heatmap_pivot = heatmap_df.pivot(
+        index="Subject",
+        columns="Score range",
+        values="Count"
+    ).fillna(0)
+
+    heatmap_pivot = heatmap_pivot.reindex(
+        columns=[
+            "100–119",
+            "120–139",
+            "140–159",
+            "160–179",
+            "180–199",
+            "200"
+        ],
+        fill_value=0
+    )
+
+    fig = px.imshow(
+        heatmap_pivot,
+        text_auto=".0f",
+        aspect="auto",
+        color_continuous_scale=HEATMAP_SCALE
     )
 
     fig.update_layout(
-        coloraxis_showscale=False,
-        yaxis={"categoryorder": "total ascending"},
-        xaxis_title="Average score",
+        xaxis_title="Score range",
         yaxis_title="",
-        height=500,
-        margin=dict(l=20, r=20, t=30, b=30)
-    )
-
-    st.plotly_chart(
-        fig,
-        width="stretch"
-    )
-
-
-# ============================================================
-# TOP REGIONS BY 180+
-# ============================================================
-
-st.divider()
-
-st.subheader("Top regions by high scores")
-
-regional_high_union = []
-
-for subject_name, score_col in score_columns.items():
-
-    regional_high_union.append(
-        f"""
-        SELECT
-            TRIM(CAST("RegName" AS VARCHAR)) AS Region,
-            "{score_col}" AS Score
-
-        FROM nmt_clean
-
-        {where_clause}
-
-        {"AND" if where_clause else "WHERE"}
-        "RegName" IS NOT NULL
-        AND "{score_col}" IS NOT NULL
-        """
-    )
-
-regional_high_df = con.execute(
-    f"""
-    WITH regional_scores AS (
-        {" UNION ALL ".join(regional_high_union)}
-    )
-
-    SELECT
-        Region,
-        SUM(
-            CASE
-                WHEN Score >= 180
-                THEN 1 ELSE 0
-            END
-        ) AS "180+",
-        COUNT(*) AS Participants
-
-    FROM regional_scores
-
-    GROUP BY Region
-
-    ORDER BY "180+" DESC
-
-    LIMIT 10
-    """
-).df()
-
-
-if not regional_high_df.empty:
-
-    regional_high_df = regional_high_df.sort_values(
-        "180+",
-        ascending=True
-    )
-
-    fig = px.bar(
-        regional_high_df,
-        x="180+",
-        y="Region",
-        orientation="h",
-        text="180+",
-        color="180+",
-        color_continuous_scale=[
-            "#D1FAE5",
-            "#6EE7B7",
-            "#10B981",
-            "#047857"
-        ],
-        hover_data=["Participants"]
-    )
-
-    fig.update_traces(
-        texttemplate="%{text:,}",
-        hovertemplate=(
-            "<b>%{y}</b>"
-            "<br>180+ results: %{x:,}"
-            "<br>Total results: %{customdata[0]:,}"
-            "<extra></extra>"
+        coloraxis_colorbar=dict(
+            tickformat=","
         ),
-        marker_line_width=0
-    )
-
-    fig.update_layout(
-        coloraxis_showscale=False,
-        xaxis_title="Number of 180+ results",
-        yaxis_title="",
-        height=500,
+        height=600,
         margin=dict(l=20, r=20, t=30, b=30)
     )
 
@@ -1569,129 +1397,340 @@ if not regional_high_df.empty:
     )
 
 
+
 # ============================================================
-# REGIONAL PARTICIPANT SHARE
-# ============================================================
 
-st.divider()
+left_col, right_col = st.columns(2)
 
-st.subheader("Where did participants come from?")
+with left_col:
+    # ============================================================
+    # REGIONAL PERFORMANCE
+    # ============================================================
 
-region_counts = con.execute(f"""
-    SELECT
-        TRIM(CAST("RegName" AS VARCHAR)) AS RegName,
-        COUNT(*) AS Participants
+    st.subheader("Regional performance")
 
-    FROM nmt_clean
+    st.markdown("<div class=\"chart-note\">Average score by region for the selected participant set.</div>", unsafe_allow_html=True)
 
-    {where_clause}
+    regional_union = []
 
-    GROUP BY RegName
+    for subject_name, score_col in score_columns.items():
 
-    ORDER BY Participants DESC
-""").df()
+        regional_union.append(
+            f"""
+            SELECT
+                "RegName" AS Region,
+                "{score_col}" AS Score
 
-if not region_counts.empty:
+            FROM nmt_clean
 
-    fig = px.treemap(
-        region_counts,
-        path=["RegName"],
-        values="Participants",
-        color="Participants",
-        color_continuous_scale=[
-            "#EFF6FF",
-            "#BFDBFE",
-            "#60A5FA",
-            "#2563EB",
-            "#312E81"
-        ]
-    )
+            {where_clause}
 
-    fig.update_traces(
-        hovertemplate=(
-            "<b>%{label}</b>"
-            "<br>Participants: %{value:,}"
-            "<extra></extra>"
+            {"AND" if where_clause else "WHERE"}
+            "RegName" IS NOT NULL
+            AND "{score_col}" IS NOT NULL
+            """
         )
-    )
 
-    fig.update_layout(
-        coloraxis_showscale=False,
-        height=600,
-        margin=dict(l=10, r=10, t=20, b=20)
-    )
-
-    st.plotly_chart(
-        fig,
-        width="stretch"
-    )
-
-
-# ============================================================
-# PARTICIPANT TYPES
-# ============================================================
-
-st.divider()
-
-st.subheader("Who took the NMT?")
-
-participant_type = con.execute(f"""
-    SELECT
-        TRIM(CAST("RegTypeName" AS VARCHAR)) AS RegTypeName,
-        COUNT(*) AS Participants
-
-    FROM nmt_clean
-
-    {where_clause}
-
-    GROUP BY RegTypeName
-
-    ORDER BY Participants DESC
-""").df()
-
-if not participant_type.empty:
-
-    fig = px.treemap(
-        participant_type,
-        path=["RegTypeName"],
-        values="Participants",
-        color="Participants",
-        color_continuous_scale=[
-            "#F5F3FF",
-            "#DDD6FE",
-            "#A78BFA",
-            "#7C3AED",
-            "#4C1D95"
-        ]
-    )
-
-    fig.update_traces(
-        hovertemplate=(
-            "<b>%{label}</b>"
-            "<br>Participants: %{value:,}"
-            "<extra></extra>"
+    regional_df = con.execute(
+        f"""
+        WITH regional_scores AS (
+            {" UNION ALL ".join(regional_union)}
         )
-    )
 
-    fig.update_layout(
-        coloraxis_showscale=False,
-        height=500,
-        margin=dict(l=10, r=10, t=20, b=20)
-    )
+        SELECT
+            Region,
+            AVG(Score) AS Average,
+            COUNT(*) AS Participants
 
-    st.plotly_chart(
-        fig,
-        width="stretch"
-    )
+        FROM regional_scores
+
+        GROUP BY Region
+
+        ORDER BY Average DESC
+        """
+    ).df()
+
+
+    if not regional_df.empty:
+
+        regional_df = regional_df.sort_values(
+            "Average",
+            ascending=False
+        )
+
+        fig = px.bar(
+            regional_df.head(10),
+            x="Average",
+            y="Region",
+            orientation="h",
+            text="Average",
+            color="Average",
+            color_continuous_scale=[
+                "#FDE8EA",
+                "#F5A6AE",
+                "#E76F51",
+                "#526777"
+            ],
+            hover_data=["Participants"]
+        )
+
+        fig.update_traces(
+            texttemplate="%{text:.1f}",
+            marker_line_width=0,
+            hovertemplate=(
+                "<b>%{y}</b>"
+                "<br>Average score: %{x:.1f}"
+                "<br>Participants: %{customdata[0]:,}"
+                "<extra></extra>"
+            )
+        )
+
+        fig.update_layout(
+            coloraxis_showscale=False,
+            yaxis={"categoryorder": "total ascending"},
+            xaxis_title="Average score",
+            yaxis_title="",
+            height=500,
+            margin=dict(l=20, r=20, t=30, b=30)
+        )
+
+        st.plotly_chart(
+            fig,
+            width="stretch"
+        )
+
+
+
+with right_col:
+    # ============================================================
+    # TOP REGIONS BY 180+
+    # ============================================================
+
+    st.subheader("Top regions by high scores")
+
+    st.markdown("<div class=\"chart-note\">Regions with the largest number of 180+ results.</div>", unsafe_allow_html=True)
+
+    regional_high_union = []
+
+    for subject_name, score_col in score_columns.items():
+
+        regional_high_union.append(
+            f"""
+            SELECT
+                TRIM(CAST("RegName" AS VARCHAR)) AS Region,
+                "{score_col}" AS Score
+
+            FROM nmt_clean
+
+            {where_clause}
+
+            {"AND" if where_clause else "WHERE"}
+            "RegName" IS NOT NULL
+            AND "{score_col}" IS NOT NULL
+            """
+        )
+
+    regional_high_df = con.execute(
+        f"""
+        WITH regional_scores AS (
+            {" UNION ALL ".join(regional_high_union)}
+        )
+
+        SELECT
+            Region,
+            SUM(
+                CASE
+                    WHEN Score >= 180
+                    THEN 1 ELSE 0
+                END
+            ) AS "180+",
+            COUNT(*) AS Participants
+
+        FROM regional_scores
+
+        GROUP BY Region
+
+        ORDER BY "180+" DESC
+
+        LIMIT 10
+        """
+    ).df()
+
+
+    if not regional_high_df.empty:
+
+        regional_high_df = regional_high_df.sort_values(
+            "180+",
+            ascending=True
+        )
+
+        fig = px.bar(
+            regional_high_df,
+            x="180+",
+            y="Region",
+            orientation="h",
+            text="180+",
+            color="180+",
+            color_continuous_scale=[
+                "#EAF4F2",
+                "#9BCBC3",
+                "#E76F51",
+                "#1F2937"
+            ],
+            hover_data=["Participants"]
+        )
+
+        fig.update_traces(
+            texttemplate="%{text:,}",
+            hovertemplate=(
+                "<b>%{y}</b>"
+                "<br>180+ results: %{x:,}"
+                "<br>Total results: %{customdata[0]:,}"
+                "<extra></extra>"
+            ),
+            marker_line_width=0
+        )
+
+        fig.update_layout(
+            coloraxis_showscale=False,
+            xaxis_title="Number of 180+ results",
+            yaxis_title="",
+            height=500,
+            margin=dict(l=20, r=20, t=30, b=30)
+        )
+
+        st.plotly_chart(
+            fig,
+            width="stretch"
+        )
+
+
+
+# ============================================================
+
+left_col, right_col = st.columns(2)
+
+with left_col:
+    # ============================================================
+    # REGIONAL PARTICIPANT SHARE
+    # ============================================================
+
+    st.subheader("Where did participants come from?")
+
+    st.markdown("<div class=\"chart-note\">The relative size of the participant population across regions.</div>", unsafe_allow_html=True)
+
+    region_counts = con.execute(f"""
+        SELECT
+            TRIM(CAST("RegName" AS VARCHAR)) AS RegName,
+            COUNT(*) AS Participants
+
+        FROM nmt_clean
+
+        {where_clause}
+
+        GROUP BY RegName
+
+        ORDER BY Participants DESC
+    """).df()
+
+    if not region_counts.empty:
+
+        fig = px.treemap(
+            region_counts,
+            path=["RegName"],
+            values="Participants",
+            color="Participants",
+            color_continuous_scale=[
+                "#EEF7F5",
+                "#BFDBFE",
+                "#60A5FA",
+                "#0F766E",
+                "#312E81"
+            ]
+        )
+
+        fig.update_traces(
+            hovertemplate=(
+                "<b>%{label}</b>"
+                "<br>Participants: %{value:,}"
+                "<extra></extra>"
+            )
+        )
+
+        fig.update_layout(
+            coloraxis_showscale=False,
+            height=600,
+            margin=dict(l=10, r=10, t=20, b=20)
+        )
+
+        st.plotly_chart(
+            fig,
+            width="stretch"
+        )
+
+
+
+with right_col:
+    # ============================================================
+    # PARTICIPANT TYPES
+    # ============================================================
+
+    st.subheader("Who took the NMT?")
+
+    st.markdown("<div class=\"chart-note\">Participant composition by registration type.</div>", unsafe_allow_html=True)
+
+    participant_type = con.execute(f"""
+        SELECT
+            TRIM(CAST("RegTypeName" AS VARCHAR)) AS RegTypeName,
+            COUNT(*) AS Participants
+
+        FROM nmt_clean
+
+        {where_clause}
+
+        GROUP BY RegTypeName
+
+        ORDER BY Participants DESC
+    """).df()
+
+    if not participant_type.empty:
+
+        fig = px.treemap(
+            participant_type,
+            path=["RegTypeName"],
+            values="Participants",
+            color="Participants",
+            color_continuous_scale=["#F5F2F7", "#DDD4E4", "#B5A3C0", "#806A8F", "#4C3D55"]
+        )
+
+        fig.update_traces(
+            hovertemplate=(
+                "<b>%{label}</b>"
+                "<br>Participants: %{value:,}"
+                "<extra></extra>"
+            )
+        )
+
+        fig.update_layout(
+            coloraxis_showscale=False,
+            height=500,
+            margin=dict(l=10, r=10, t=20, b=20)
+        )
+
+        st.plotly_chart(
+            fig,
+            width="stretch"
+        )
+
 
 
 # ============================================================
 # HIGH PERFORMERS
 # ============================================================
 
-st.divider()
-
 st.subheader("High performers")
+
+st.markdown("<div class=\"chart-note\">The share of results reaching 180+ for each subject.</div>", unsafe_allow_html=True)
 
 high_performer_union = []
 
@@ -1767,11 +1806,11 @@ if not high_performers_df.empty:
         text="180+ %",
         color="180+ %",
         color_continuous_scale=[
-            "#DBEAFE",
-            "#93C5FD",
-            "#6366F1",
-            "#4338CA",
-            "#312E81"
+            "#EEF7F5",
+            "#F5B0B8",
+            "#2A9D8F",
+            "#0F766E",
+            "#174C4A"
         ],
         hover_data=[
             "180+",
